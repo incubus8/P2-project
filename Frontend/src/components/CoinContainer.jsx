@@ -4,7 +4,7 @@ import FavCoins from './FavCoins'
 import Buttons from './Buttons'
 
 
-function CoinContainer(){
+function CoinContainer({coins}){
 
     return (
         <div>
