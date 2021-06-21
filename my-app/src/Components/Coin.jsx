@@ -7,11 +7,15 @@ function Coin(coin){
 
     return(
         <tr>
-            <img className = 'coinLogo'src ={image} alt={name}/>
-            <td>{name}</td>
-            <td>{symbol}</td>
-            <td>${current_price}</td>
-            <Buttons/>
+            <td>
+                <img className = 'coinLogo'src ={image} alt={name}/>
+            </td>
+                <td>{name}</td>
+                <td>{symbol}</td>
+                <td>${current_price}</td>
+            <td>
+             <Buttons/>
+            </td>
         </tr>
     )
 }

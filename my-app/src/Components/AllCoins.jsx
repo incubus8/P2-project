@@ -12,7 +12,7 @@ function AllCoins({coins}){
                 <tbody>
                     <tr>
                         <th>
-                            <h3>Coin</h3>
+                            <h3>Logo</h3>
                         </th>
                         <th>
                             <h3>Name</h3>
