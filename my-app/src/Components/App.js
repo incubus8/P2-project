@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from './Logo'
-// import NavBar from './NavBar'
+import 'semantic-ui-css/semantic.min.css'
 import CoinContainer from './CoinContainer'
 
  

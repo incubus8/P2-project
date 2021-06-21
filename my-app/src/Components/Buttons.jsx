@@ -1,4 +1,6 @@
 import React, {useState} from 'react'
+import { Button } from 'semantic-ui-react'
+
 
 function Buttons(){
     const [favorite, setFavorite] = useState(false)
@@ -18,7 +20,8 @@ function Buttons(){
         ):(
             <button
                 onClick={handleFavorite}
-                className="favorite-inactive">
+                className="favorite-active">
+                {/* className="ui red basic button"> */}
                 😀  
             </button>
         )}

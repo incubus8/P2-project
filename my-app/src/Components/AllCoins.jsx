@@ -1,5 +1,7 @@
 import React from 'react'
 import Coin from './Coin'
+import { Segment } from 'semantic-ui-react'
+import { Header, Image, Table } from 'semantic-ui-react'
 
 
 function AllCoins({coins}){
@@ -8,9 +10,9 @@ function AllCoins({coins}){
     
     return(
         <div>
-            <table>
+            <table className= "ui blue table">
                 <tbody>
-                    <tr>
+                    <tr >
                         <th>
                             <h3>Logo</h3>
                         </th>
