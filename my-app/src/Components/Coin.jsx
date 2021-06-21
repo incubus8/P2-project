@@ -1,4 +1,5 @@
 import React from 'react'
+import Buttons from './Buttons'
 
 
 function Coin(coin){
@@ -10,6 +11,7 @@ function Coin(coin){
             <td>{name}</td>
             <td>{symbol}</td>
             <td>${current_price}</td>
+            <Buttons/>
         </tr>
     )
 }

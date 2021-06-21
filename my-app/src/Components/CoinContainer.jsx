@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import AllCoins from './AllCoins'
 import FavCoins from './FavCoins'
-import Buttons from './Buttons'
 
 
 function CoinContainer(){
@@ -19,8 +18,7 @@ function CoinContainer(){
     return (
         <div>
             <AllCoins coins = {coins}/>
-            {/* <FavCoins/>
-            <Buttons/> */}
+             {/* <FavCoins/> */}
         </div>
     )
 }
