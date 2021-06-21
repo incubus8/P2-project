@@ -1,7 +1,6 @@
 import React from 'react'
 import Buttons from './Buttons'
-import { Image } from 'semantic-ui-react'
-
+import { Image, Reveal } from 'semantic-ui-react'
 
 
 

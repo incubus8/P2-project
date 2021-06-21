@@ -9,10 +9,10 @@ function AllCoins({coins}){
     )
     
     return(
-        <div>
+        <div className="table"> 
             <table className= "ui blue table">
                 <tbody>
-                    <tr >
+                    <tr>
                         <th>
                             <h3>Logo</h3>
                         </th>

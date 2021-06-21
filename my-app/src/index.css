@@ -18,14 +18,12 @@ code {
 }
 
 .favorite-active{
-  margin: 0px !important;
   width: 60px;
   height: auto;
   font-size: 25px;
 }
 
 .favorite-inactive{
-  margin: 0px !important;
   width: 60px;
   height: auto;
   font-size: 25px;
@@ -37,3 +35,9 @@ code {
   height: auto;
   font-size: 25px;
 } */
+
+.table {
+ margin-left: 50px;
+ margin-right: 50px;
+ margin-top: 60px;
+}
