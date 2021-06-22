@@ -37,7 +37,7 @@ function AllCoins({coins, setSort, removeCoin}){
                         </th>
                         <th>
                             <h3 className="ui blue header"
-                            onClick={(e) => setSort(e.target.textContent)}>Favorite</h3>
+                            onClick={(e) => setSort(e.target.textContent)}> Favorite</h3>
                         </th>
                     </tr> 
                     {coinsList}

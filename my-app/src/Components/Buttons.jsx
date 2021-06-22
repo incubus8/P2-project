@@ -9,8 +9,10 @@ function Buttons({id}){
         setFavorite(favorite => !favorite)
     }
 
+    // console.log();
+
     const removeCoin = () => {
-        fetch(`https://api.coingecko.com/${id}`, {
+        fetch(`https://api.coingecko.com/api/v3/coins/${id}`, {
           method: 'DELETE',
         })
          removeCoin(id); 
