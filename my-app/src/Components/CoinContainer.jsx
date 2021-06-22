@@ -30,10 +30,8 @@ function CoinContainer(){
         ||
         (coin.symbol.toLowerCase().includes(search.toLowerCase()))
       })
-
+      
       const handleSort = () => {
-        console.log(sort)
-        // return []
 
         if (sort === "Name"){
              return filteredCoin.sort((a, b) =>a.name.localeCompare(b.name))  
@@ -42,7 +40,7 @@ function CoinContainer(){
         }else if (sort === "Current Price"){
             return filteredCoin.sort((a, b) =>(a.current_price < b.current_price) ? 1 : -1)  
         }else if (sort === "Change in 24h"){
-            return filteredCoin.sort((a, b) =>(a.change_in_24h < b.change_in_24h) ? 1 : -1)  
+            return filteredCoin.sort((a, b) => parseInt(a.price_change_percentage_24h*100) - parseInt(b.price_change_percentage_24h*100))   
         }else {
             return filteredCoin
     //     if (coins){
