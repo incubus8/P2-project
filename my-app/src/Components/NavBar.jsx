@@ -5,15 +5,20 @@ import { Input } from 'semantic-ui-react'
 function NavBar({search, setSearch}){
 
     return (
+    <div className = 'NavBar'>
         <div className="ui icon input">
+            <button className ='Login'>
+                Login
+            </button>            
+             <button className ='Favorite'>
+                Favorites List
+            </button>
             <input onChange={(e) => setSearch(e.target.value)} 
                 type="text" 
                 value={search}
-                placeholder="Search..."/>
-            <i aria-hidden="true" 
-                 className="search circular link icon">
-            </i>
+                placeholder="Search name or symbol..."/>
         </div>
+    </div>
       );
     }
     

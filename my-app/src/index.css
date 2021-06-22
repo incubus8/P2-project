@@ -17,17 +17,17 @@ code {
   height: 40px;
 }
 
-.favorite-active{
+/* .favorite-active{
   width: 60px;
   height: auto;
   font-size: 25px;
-}
+} */
 
-.favorite-inactive{
+/* .favorite-inactive{
   width: 60px;
   height: auto;
   font-size: 25px;
-}
+} */
 
 /* .ui-blue-basic-button {
   margin: 0px !important;
@@ -39,5 +39,11 @@ code {
 .table {
  margin-left: 50px;
  margin-right: 50px;
- margin-top: 60px;
+ margin-top: 10px;
+}
+
+.NavBar {
+  margin-top: 50px;
+  margin-left: 50px;
+  /* float: left */
 }
