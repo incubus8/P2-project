@@ -13,14 +13,15 @@ function Buttons(){
         <div>
             {favorite ? (
             <button 
+                type="hollow-primary"
                 onClick={handleFavorite}
-                className="favorite-active">
+                className="ui blue basic button">
                 🤑  
             </button>
         ):(
             <button
                 onClick={handleFavorite}
-                className="favorite-active">
+                className="ui blue basic button">
                 {/* className="ui red basic button"> */}
                 😀  
             </button>

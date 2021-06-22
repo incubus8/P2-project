@@ -13,7 +13,7 @@ function AllCoins({coins}){
             <table className= "ui blue table">
                 <tbody>
                     <tr>
-                        <th>
+                        <th> 
                             <h3>Logo</h3>
                         </th>
                         <th>
