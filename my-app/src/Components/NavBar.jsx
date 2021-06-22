@@ -1,16 +1,16 @@
 import React from 'react'
-import { Input } from 'semantic-ui-react'
+import { Input, Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
 function NavBar({search, setSearch}){
 
     return (
     <div className = 'NavBar'>
-        <div className="ui icon input">
-            <button className ='Login'>
+        <div className="ui focus input">
+            <button className ='ui basic blue button'>
                 Login
             </button>            
-             <button className ='Favorite'>
+             <button className ='ui basic blue button'>
                 Favorites List
             </button>
             <input onChange={(e) => setSearch(e.target.value)} 
@@ -24,12 +24,3 @@ function NavBar({search, setSearch}){
     
 
 export default NavBar
-
-
-{/* <div className="ui icon input">
-<input
-  type="text"
-  value={search}
-  placeholder="Search..."
-  onChange={(e) => setSearch(e.target.value)}
-/> */}

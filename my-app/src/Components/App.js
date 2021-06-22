@@ -3,12 +3,11 @@ import Logo from './Logo'
 import 'semantic-ui-css/semantic.min.css'
 import CoinContainer from './CoinContainer'
 
- 
-
 function App(){
+  
     return(
         <div>
-          {/* <Logo/> */}
+          <Logo />
           <CoinContainer />
         </div>
 )

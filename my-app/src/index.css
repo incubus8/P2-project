@@ -17,6 +17,18 @@ code {
   height: 40px;
 }
 
+
+.table {
+ margin-left: 50px;
+ margin-right: 50px;
+ margin-top: 10px;
+}
+
+.NavBar {
+  margin-top: 50px;
+  margin-left: 50px;
+  /* float: left */
+}
 /* .favorite-active{
   width: 60px;
   height: auto;
@@ -35,15 +47,3 @@ code {
   height: auto;
   font-size: 25px;
 } */
-
-.table {
- margin-left: 50px;
- margin-right: 50px;
- margin-top: 10px;
-}
-
-.NavBar {
-  margin-top: 50px;
-  margin-left: 50px;
-  /* float: left */
-}
