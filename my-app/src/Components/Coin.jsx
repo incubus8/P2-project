@@ -11,13 +11,7 @@ function Coin(coin, removeCoin){
     let n = price_change_percentage_24h
     let roundedPercent = (parseFloat(n).toFixed(2))
 
-    // const removeCoin = () => {
-    //     fetch(`https://api.coingecko.com/${id}`, {
-    //       method: 'DELETE',
-    //     })
-    //      removeCoin(id); 
-    //     }
-
+    
     return(
         <tr>
             <td >
@@ -28,7 +22,7 @@ function Coin(coin, removeCoin){
                 <td className="ui small header">$ {roundedNumber}</td>
                 <td className="ui small header">{roundedPercent}%</td>
             <td>
-             <Buttons removeCoin={removeCoin} id={id}/>
+             <Buttons id={id}/>
             </td>
         </tr>
     )

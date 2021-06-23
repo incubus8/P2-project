@@ -14,11 +14,25 @@ function CoinContainer(){
     const [search, setSearch] = useState("")
     const [toggle, setToggle] = useState(false)
     const [sort, setSort] = useState('')
-    const [page, setPage] = useState("/")
+    // const [page, setPage] = useState("/")
     
     const handleToggle = () =>{
        setToggle(toggle => !toggle)
-   }
+    }
+
+   const renderFaves = () =>{
+        return <FavCoins/>
+    }
+
+    const handleFaves = () =>{
+        handleToggle()
+        renderFaves()
+    }
+
+   function addFave (faveCoin) {
+    let faveCoinArr = [...coins, faveCoin]
+    setCoins(faveCoinArr)
+  }
 
     useEffect(()=> {
       fetch(coinUrl)
@@ -26,11 +40,6 @@ function CoinContainer(){
       .then (coinData => setCoins(coinData))
     }, [])
 
-
-    function removeCoin (id){
-        const newList = coins.filter(coin => coin.id !== id);
-        setCoins(newList);
-    }
 
     const filteredCoin = coins.filter(coin => {
         return (coin.name.toLowerCase().includes(search.toLowerCase()))
@@ -61,15 +70,16 @@ function CoinContainer(){
             <NavBar 
                 search={search} 
                 setSearch={setSearch}
-                handleToggle={handleToggle}
+                // handleToggle={handleToggle}
                 toggle={toggle}
+                handleToggle={handleFaves}
+
             />
             <AllCoins 
                 coins={handleSort()} 
                 setSort={setSort}
-                removeCoin={removeCoin}
              />
-             {/* <FavCoins/> */}
+             <FavCoins coins={coins}/>
 
     {/* <div>
      <NavBar />

@@ -3,9 +3,9 @@ import Coin from './Coin'
 import { Segment } from 'semantic-ui-react'
 import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
-function AllCoins({coins, setSort, removeCoin}){
+function AllCoins({coins, setSort}){
     const coinsList = coins.map(coin => 
-    <Coin key={coin.id} {...coin} removeCoin={removeCoin}
+    <Coin key={coin.id} {...coin}
     />
     )
  

@@ -22,7 +22,7 @@ function Login(login) {
       <div className="login">
         {/* {submit ? */}
         <form 
-        // onSubmit={handleSubmit} 
+        onSubmit={handleSubmit} 
         className='ui form'> 
         {/* <CoinContainer/> */}
           <div>

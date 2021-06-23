@@ -9,16 +9,8 @@ function Buttons({id}){
         setFavorite(favorite => !favorite)
     }
 
-    // console.log();
 
-    const removeCoin = () => {
-        fetch(`https://api.coingecko.com/api/v3/coins/${id}`, {
-          method: 'DELETE',
-        })
-         removeCoin(id); 
-        }
-
-    return(
+        return(
         <div>
             {favorite ? (
             <button 
@@ -33,9 +25,7 @@ function Buttons({id}){
                 😀  
             </button>)
             }
-                <button 
-                    onClick={removeCoin}
-                    className="ui blue basic button">
+                <button className="ui blue basic button">
                         😢
                 </button>
         </div>

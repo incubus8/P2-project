@@ -17,7 +17,8 @@ function NavBar({search, setSearch, handleToggle}){
                 Logout
             </button>            
              <button className ='ui basic blue button'
-                onClick={handleToggle}>             
+                onClick={handleToggle}
+                >             
                 Favorites List
             </button>
             <input onChange={(e) => setSearch(e.target.value)} 
