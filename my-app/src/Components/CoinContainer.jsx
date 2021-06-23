@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
+import {NavLink, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import AllCoins from './AllCoins'
 import FavCoins from './FavCoins'
 import NavBar from './NavBar'
 import Buttons from './Buttons'
 import Coin from './Coin'
+import Logo from './Logo'
+import CoinDetail from './CoinDetail';
 
 function CoinContainer(){
     const [coins, setCoins] = useState([])
@@ -11,7 +14,7 @@ function CoinContainer(){
     const [search, setSearch] = useState("")
     const [toggle, setToggle] = useState(false)
     const [sort, setSort] = useState('')
-
+    const [page, setPage] = useState("/")
     
     const handleToggle = () =>{
        setToggle(toggle => !toggle)
@@ -36,7 +39,6 @@ function CoinContainer(){
       })
       
       const handleSort = () => {
-
         if (sort === "Name"){
              return filteredCoin.sort((a, b) =>a.name.localeCompare(b.name))  
         }else if (sort === "Symbol"){
@@ -55,6 +57,7 @@ function CoinContainer(){
 }
     return (
         <main>
+            <Logo />
             <NavBar 
                 search={search} 
                 setSearch={setSearch}
@@ -67,6 +70,22 @@ function CoinContainer(){
                 removeCoin={removeCoin}
              />
              {/* <FavCoins/> */}
+
+    {/* <div>
+     <NavBar />
+         <Switch>
+                <Route path="/coincontainer">
+                    <CoinContainer />
+                </Route>
+                <Route exact path="/">
+                     <CoinDetail />
+                </Route>
+                <Route path="/money">
+                    <h1>404 not found</h1>
+                </Route>
+          </Switch>
+      </div> */}
+
         </main>
     )
 }
