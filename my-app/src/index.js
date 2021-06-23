@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './Components/App';
 import reportWebVitals from './reportWebVitals';
-
+import { Switch, Route } from "react-router-dom";
 
 
 // ReactDOM.render(<App />, document.getElementById("root"));
