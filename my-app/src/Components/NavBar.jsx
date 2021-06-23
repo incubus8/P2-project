@@ -1,6 +1,6 @@
 import React from 'react'
 import { Input, Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
-import { Link } from "react-router-dom"
+import { NavLink, Link, Switch, Route  } from "react-router-dom"
 
 function NavBar({search, setSearch}){
 
@@ -18,11 +18,15 @@ function NavBar({search, setSearch}){
                 value={search}
                 placeholder="Search name or symbol..."/>
         </div>
-            {/* <nav>
-                    <Link to="/">Home</Link>
-                    <Link to="/about">About</Link>
-                    <Link to="/projects">Projects</Link>
-            </nav> */}
+        {/* <switch> 
+            <Route> 
+                <nav>
+                    <NavLink exact to="/">Home</NavLink>
+                    <NavLink to="/CoinContainer">Coincontainer</NavLink>
+                    <NavLink to="/CoinDetail">Coindetail</NavLink>
+                </nav>
+            </Route>
+         </switch> */}
     </div>
       );
     }

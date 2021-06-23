@@ -29,6 +29,12 @@ code {
   margin-left: 50px;
   /* float: left */
 }
+
+.login {
+ margin-left: 450px;
+ margin-right: 450px;
+ margin-top: 400px;
+}
 /* .favorite-active{
   width: 60px;
   height: auto;

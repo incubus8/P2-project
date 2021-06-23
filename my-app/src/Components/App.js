@@ -16,7 +16,7 @@ function App(){
     return(
       <div>
           {/* <Login /> */}
-          <Logo />
+           {/* <Logo /> */}
           <CoinContainer />
       </div>
 
@@ -39,6 +39,5 @@ function App(){
       // </div>
 )
 }
-
 
 export default App

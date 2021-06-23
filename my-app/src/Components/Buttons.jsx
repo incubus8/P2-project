@@ -33,11 +33,11 @@ function Buttons({id}){
                 😀  
             </button>)
             }
-                {/* <button 
+                <button 
                     onClick={removeCoin}
                     className="ui blue basic button">
                         😢
-                </button> */}
+                </button>
         </div>
     )
 }
