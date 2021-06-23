@@ -9,7 +9,13 @@ function CoinContainer(){
     const [coins, setCoins] = useState([])
     const coinUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=17&page=1&sparkline=false"
     const [search, setSearch] = useState("")
+    const [toggle, setToggle] = useState(false)
     const [sort, setSort] = useState('')
+
+    
+    const handleToggle = () =>{
+       setToggle(toggle => !toggle)
+   }
 
     useEffect(()=> {
       fetch(coinUrl)
@@ -17,7 +23,6 @@ function CoinContainer(){
       .then (coinData => setCoins(coinData))
     }, [])
 
-     console.log(coins); 
 
     function removeCoin (id){
         const newList = coins.filter(coin => coin.id !== id);
@@ -40,9 +45,9 @@ function CoinContainer(){
             return filteredCoin.sort((a, b) =>(a.current_price < b.current_price) ? 1 : -1)  
         }else if (sort === "Change in 24h"){
             return filteredCoin.sort((a, b) => 
-            parseInt(a.price_change_percentage_24h*100)
-             - 
             parseInt(b.price_change_percentage_24h*100)
+             - 
+            parseInt(a.price_change_percentage_24h*100)
             )   
         }else {
             return filteredCoin
@@ -52,7 +57,8 @@ function CoinContainer(){
         <main>
             <NavBar 
                 search={search} 
-                setSearch={setSearch} 
+                setSearch={setSearch}
+                handleToggle={handleToggle} 
             />
             <AllCoins 
                 coins={handleSort()} 

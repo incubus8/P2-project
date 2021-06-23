@@ -1,8 +1,14 @@
-import React from 'react'
-import { Input, Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
-import { NavLink, Link, Switch, Route  } from "react-router-dom"
+import React, {useState} from 'react'
+// import { Input, Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
+// import { NavLink, Link, Switch, Route  } from "react-router-dom"
+import CoinContainer from './CoinContainer'
 
-function NavBar({search, setSearch}){
+function NavBar({search, setSearch, handleToggle}){
+    // const [toggle, setToggle] = useState(false)
+    
+    // function handleToggle(){
+    //     setToggle(toggle => !toggle)
+    // }
 
     return (
     <div className = 'NavBar'>
@@ -10,7 +16,8 @@ function NavBar({search, setSearch}){
             <button className ='ui basic blue button'>
                 Login
             </button>            
-             <button className ='ui basic blue button'>
+             <button className ='ui basic blue button'
+                onClick={handleToggle}>             
                 Favorites List
             </button>
             <input onChange={(e) => setSearch(e.target.value)} 
