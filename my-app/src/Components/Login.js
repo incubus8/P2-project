@@ -9,13 +9,13 @@ import CoinContainer from "./CoinContainer";
 
 function Login(login) {
   const [submit, setSubmit] = useState('')
-  const [logIn, setLogIn] =useState('')
+  
 
-  // function handleSubmit(e){
-  //   e.preventdefaul();
-  //   setSubmit(submit => !submit)
-  //   console.log(submit);
-  // }
+  function handleSubmit(e){
+    e.preventDefault();
+    setSubmit(submit => !submit)
+    console.log(submit);
+  }
 
 
     return (

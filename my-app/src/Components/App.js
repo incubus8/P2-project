@@ -11,10 +11,11 @@ import CoinDetail from './CoinDetail'
 import  Home from './Home'
 
 function App(){
+  const [logIn, setLogIn] =useState(true)
+
     return(
       <div>
-          {/* <Login /> */}
-          <CoinContainer />
+          {logIn ? <CoinContainer /> : <Login />}     
       </div>
 )
 }
