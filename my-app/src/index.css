@@ -26,7 +26,7 @@ code {
 
 .NavBar {
   margin-top: 50px;
-  margin-left: 695px;
+  margin-left: 50px;
   /* float: left */
 }
 
@@ -38,10 +38,9 @@ code {
 
 .logo {
   width: 20px;
-  height: 120px;
-  margin-left: 50px;
+  height: 150px;
+  margin-left: 20px;
 }
-
 
 /* .favorite-active{
   width: 60px;
