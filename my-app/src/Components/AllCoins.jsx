@@ -36,7 +36,7 @@ function AllCoins({coins, setSort, removeCoin}){
                             onClick={(e) => setSort(e.target.textContent)}>Change in 24h</h3>
                         </th>
                         <th>
-                            <h3 className="ui blue header"> Favorite/Remove</h3>
+                            <h3 className="ui blue header"> Favorite  | Remove</h3>
                         </th>
                     </tr> 
                     {coinsList}

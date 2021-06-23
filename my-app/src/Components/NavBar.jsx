@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 // import { Input, Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
-// import { NavLink, Link, Switch, Route  } from "react-router-dom"
+import { NavLink, Link, Switch, Route  } from "react-router-dom"
 import CoinContainer from './CoinContainer'
 
 function NavBar({search, setSearch, handleToggle}){
@@ -14,7 +14,7 @@ function NavBar({search, setSearch, handleToggle}){
     <div className = 'NavBar'>
         <div className="ui focus input">
             <button className ='ui basic blue button'>
-                Login
+                Logout
             </button>            
              <button className ='ui basic blue button'
                 onClick={handleToggle}>             
@@ -27,11 +27,8 @@ function NavBar({search, setSearch, handleToggle}){
         </div>
         {/* <switch> 
             <Route> 
-                <nav>
                     <NavLink exact to="/">Home</NavLink>
                     <NavLink to="/CoinContainer">Coincontainer</NavLink>
-                    <NavLink to="/CoinDetail">Coindetail</NavLink>
-                </nav>
             </Route>
          </switch> */}
     </div>
