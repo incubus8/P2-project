@@ -58,7 +58,8 @@ function CoinContainer(){
             <NavBar 
                 search={search} 
                 setSearch={setSearch}
-                handleToggle={handleToggle} 
+                handleToggle={handleToggle}
+                toggle={toggle}
             />
             <AllCoins 
                 coins={handleSort()} 

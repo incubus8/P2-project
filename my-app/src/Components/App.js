@@ -16,7 +16,7 @@ function App(){
     return(
       <div>
           {/* <Login /> */}
-           {/* <Logo /> */}
+           <Logo />
           <CoinContainer />
       </div>
 
