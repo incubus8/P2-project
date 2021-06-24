@@ -12,7 +12,7 @@ import {NavLink, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App(){
     const [logIn, setLogIn]= useState(true)
-    
+
     return(
       <div className='App'>
           {/* {logIn ? <CoinContainer /> : <Login /> } */}
@@ -23,3 +23,8 @@ function App(){
 )
 }
 export default App
+
+
+// Favorite and then unfavorite
+// Favorite button persists after changing lists
+// remove will refresh list immediately

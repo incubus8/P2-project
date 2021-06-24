@@ -7,7 +7,7 @@ function FavCoins({setSort, sort}) {
 
     let favCards = faves.map(fave => <Coin key={fave.id} all={false} coin={fave} removeFave={removeFave} />)
 
-    function removeFave(){
+    function removeFave(id){
         const favArr = favCards.filter(fave => fave.id !== fave.id);
         setFaves(favArr)    
       }
