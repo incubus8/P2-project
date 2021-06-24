@@ -13,29 +13,26 @@ function Coin(coin, removeCoin){
     let n = price_change_percentage_24h
     let roundedPercent = (parseFloat(n).toFixed(2))
 
-    // const handleFave=()=> {
-        // let addFaveItem={
-        //     image: image,
-        //     name: name,
-        //     symbol: symbol,
-        //     current_price: parseInt(current_price),
-        //     price_change_percentage_24h: parseInt(price_change_percentage_24h),
-        // }
-
-     const handlePost = () => { 
+    const handleFave=()=> {
+        let addFaveItem={
+            image: image,
+            name: name,
+            symbol: symbol,
+            current_price: parseInt(current_price),
+            price_change_percentage_24h: parseInt(price_change_percentage_24h),
+        }
+    
         fetch(favUrl, {
         method: 'POST',
         headers: { 
-            'Content-Type': 'application/json' 
+            'Content-Type': 'application/json',
             },
-        body: JSON.stringify(postFaves),
+        body: JSON.stringify(addFaveItem),
         })
         .then((res) => res.json())
         .then(faveData => setPostFaves(faveData))
      }
-
-     
-
+    
 
     return(
         <tr>
@@ -47,7 +44,7 @@ function Coin(coin, removeCoin){
                 <td className="ui small header">$ {roundedNumber}</td>
                 <td className="ui small header">{roundedPercent}%</td>
             <td>
-             <Buttons id={id} coin={coin} handlePost={handlePost}/>
+             <Buttons id={id} coin={coin} handleFave={handleFave}/>
             </td>
         </tr>
     )

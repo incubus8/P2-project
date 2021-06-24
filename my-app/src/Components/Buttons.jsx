@@ -2,17 +2,17 @@ import React, {useState} from 'react'
 import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
-function Buttons({coin, handlePost}){
+function Buttons({coin, handleFave}){
     const [favorite, setFavorite] = useState(false)
     
     function handleFavorite(){
         setFavorite(favorite => !favorite)
     }
 
-    function handleClicks(){
-        handleFavorite()
-        handlePost()
-    }
+    // function handleClicks(){
+    //     this.handleFavorite()
+    //     this.handleFave()
+    // }
 
      console.log('coins', coin);
 
@@ -21,7 +21,7 @@ function Buttons({coin, handlePost}){
         <div>
             {favorite ? (
             <button 
-                onClick={handleClicks}
+                onClick={() =>{handleFave(); handleFavorite()}}
                 className="ui blue basic button">
                 🤑  
             </button>
