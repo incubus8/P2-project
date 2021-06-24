@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-function FavCoins({faveCoins, coins}) {
+function FavCoins() {
     const [faves, setFaves] = useState([])
     const favUrl = "http://localhost:3000/fav_coins"
     const {image, name, symbol, current_price, price_change_percentage_24h} = faves
@@ -9,23 +9,24 @@ function FavCoins({faveCoins, coins}) {
     let roundedNumber = (parseFloat(i).toFixed(3))
     let n = price_change_percentage_24h
     let roundedPercent = (parseFloat(n).toFixed(2))
-
-
+    
+    
     useEffect(()=> {
         fetch(favUrl)
         .then (res => res.json())
         .then (favesData => setFaves(favesData))
-      }, [])
-
-      console.log('faves', faves);
-      console.log(faves.image);
-
+    }, [])
+    
+    
+    console.log('faves', faves);
+    
       return(
         <div className="table"> 
             <table className="ui blue table">
                 <tr>
+                    
                     <td >
-                        <img className='ui avatar image'src ={image} alt={name}/> 
+                        <img className='ui avatar image' src ={image} alt={name}/> 
                     </td >
                     <td 
                     className="ui small header">{name}</td>

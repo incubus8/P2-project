@@ -9,10 +9,10 @@ function Buttons({coin, handleFave}){
         setFavorite(favorite => !favorite)
     }
 
-    // function handleClicks(){
-    //     this.handleFavorite()
-    //     this.handleFave()
-    // }
+    function handleClicks(){
+        handleFavorite()
+        handleFave()
+    }
 
      console.log('coins', coin);
 
@@ -21,13 +21,13 @@ function Buttons({coin, handleFave}){
         <div>
             {favorite ? (
             <button 
-                onClick={() =>{handleFave(); handleFavorite()}}
+                onClick={() =>{handleFavorite()}}
                 className="ui blue basic button">
                 🤑  
             </button>
         ):(
             <button
-                onClick={handleFavorite}
+                onClick={handleClicks}
                 className="ui blue basic button">
                 😀  
             </button>)

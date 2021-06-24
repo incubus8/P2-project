@@ -40,7 +40,7 @@ function CoinContainer(){
       .then (coinData => setCoins(coinData))
     }, [])
 
-
+    
     const filteredCoin = coins.filter(coin => {
         return (coin.name.toLowerCase().includes(search.toLowerCase()))
         ||
@@ -79,7 +79,7 @@ function CoinContainer(){
                 coins={handleSort()} 
                 setSort={setSort}
              />
-             <FavCoins coins={coins}/>
+             <FavCoins />
 
     {/* <div>
      <NavBar />
