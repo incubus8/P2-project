@@ -75,6 +75,7 @@ function CoinContainer(){
                 // handleToggle={handleFaves}
 
             />
+            {/* {toggle ?} */}
             <AllCoins 
                 coins={handleSort()} 
                 setSort={setSort}
