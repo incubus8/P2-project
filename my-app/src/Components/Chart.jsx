@@ -1,45 +1,23 @@
 import React from 'react'
 import { Bar } from 'react-chartjs-2'
-function Chart(){
+
+function Chart({coins}){
+    const coinName = coins.map(coin => coin.name)
+    const coinChange= coins.map(coin => coin.price_change_percentage_24h)
+    // const coinMarketCap = coins.map(coin => coin.market_cap_rank)
+console.log(coins);   
     return (
-        <div>
+        <div className='Chart'>
             <Bar 
             data={{
-                labels: ['jan', 'feb', 'march'],
+                labels: coinName,
                 datasets: [{
-                    label: 'store1',
-                    data: [100, 200, 300],
-                    backgroundColor: 'blue'
+                    label: 'Price',
+                    data: coinChange,
+                    backgroundColor: 'blue',
+                    ticks:{ beginAtZero: true}
                 }]
             }}
-                options={{
-                    scales:{
-                        xAxes: [
-                            {
-                             scalelabel:{
-                               labelString: 'Sales', 
-                               display:true,
-                               fontColor: 'blue',
-                               fontSize: 18
-                             }   
-                            }
-                        ],
-                        yAxes: [
-                        {  scalelabel:{
-                            labelString: 'reve',  
-                            display:true,
-                            fontColor: 'blue',
-                            fontSize: 18
-                        },  
-                        ticks:{
-                            beginAtZero: true
-                            }
-                        }  
-                        ]
-                    }
-                }}
-                height={400}
-                width={600}
             >    
             </Bar>
         </div>

@@ -3,6 +3,7 @@ import AllCoins from './AllCoins'
 import FavCoins from './FavCoins'
 import NavBar from './NavBar'
 import Logo from './Logo'
+import Chart from './Chart'
 
 function CoinContainer(){
     const [coins, setCoins] = useState([])
@@ -59,7 +60,9 @@ function CoinContainer(){
             <FavCoins
             setSort={setSort}
             sort={sort}/>)}
+            <Chart coins={coins}/>
          </main>
+         
     )
 }
 
