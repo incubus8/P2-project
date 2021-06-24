@@ -2,22 +2,23 @@ import React from 'react'
 import Logo from './Logo'
 import 'semantic-ui-css/semantic.min.css'
 import CoinContainer from './CoinContainer'
-import Chart from './Chart'
-import Login from './Login'
-import NavBar from './NavBar'
-import {NavLink, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 import { useState } from 'react'
 import CoinDetail from './CoinDetail'
-import  Home from './Home'
+import Chart from './Chart'
+import Login from './Login'
+import {Bar} from 'react-chartjs-2'
+import NavBar from './NavBar'
+import {NavLink, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App(){
-  const [logIn, setLogIn] =useState(true)
-
+    const [logIn, setLogIn]= useState(true)
     return(
-      <div>
-          {logIn ? <CoinContainer /> : <Login />}     
+      <div className='App'>
+          {/* {logIn ? <CoinContainer /> : <Login /> } */}
+          {/* <Login /> */}
+          {/* <CoinContainer /> */}
+          <Chart />
       </div>
 )
 }
-
 export default App

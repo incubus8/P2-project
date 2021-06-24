@@ -1,9 +1,8 @@
 import React from 'react'
-import {Bar} from 'react-chartjs-2'
-
+import { Bar } from 'react-chartjs-2'
 function Chart(){
     return (
-        <div className='chart'>
+        <div>
             <Bar 
             data={{
                 labels: ['jan', 'feb', 'march'],
@@ -15,20 +14,35 @@ function Chart(){
             }}
                 options={{
                     scales:{
+                        xAxes: [
+                            {
+                             scalelabel:{
+                               labelString: 'Sales', 
+                               display:true,
+                               fontColor: 'blue',
+                               fontSize: 18
+                             }   
+                            }
+                        ],
                         yAxes: [
-                        {
+                        {  scalelabel:{
+                            labelString: 'reve',  
+                            display:true,
+                            fontColor: 'blue',
+                            fontSize: 18
+                        },  
                         ticks:{
                             beginAtZero: true
-                        }
+                            }
                         }  
                         ]
                     }
                 }}
+                height={400}
+                width={600}
             >    
             </Bar>
         </div>
     )
 }
-
-
-export default Chart
+export default Chart;
