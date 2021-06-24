@@ -3,35 +3,31 @@ import React, {useState} from 'react'
 import { NavLink, Link, Switch, Route  } from "react-router-dom"
 import CoinContainer from './CoinContainer'
 
-function NavBar({search, setSearch}){
-    const [toggle, setToggle] = useState(false)
+function NavBar({search, setSearch, setToggle, toggle}){
+    const [changeState, setChangeState] = useState(false)
     
     function handleToggle(){
-        setToggle(toggle => !toggle)
+        setChangeState(changeState => !changeState)
+    }
+
+    function handleLists(){
+        handleToggle()
+        setToggle(!toggle)
     }
 
     return (
     <div className = 'NavBar'>
         <div className="ui focus input">
-            <button className ='ui basic blue button'>
-                Logout
-            </button>            
              <button className ='ui basic blue button'
-                onClick={handleToggle}
+                onClick={handleLists}
                 >             
-                {toggle ? "All Coins" : "Favorite Coins"}
+                {changeState ? "All Coins" : "Favorite Coins"}
             </button>
             <input onChange={(e) => setSearch(e.target.value)} 
                 type="text" 
                 value={search}
                 placeholder="Search name or symbol..."/>
         </div>
-        {/* <switch> 
-            <Route> 
-                    <NavLink exact to="/">Home</NavLink>
-                    <NavLink to="/CoinContainer">Coincontainer</NavLink>
-            </Route>
-         </switch> */}
     </div>
       );
     }

@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
 import Buttons from './Buttons'
+import Remove from './Remove'
 import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
-function Coin(coin, removeCoin){
+function Coin({coin, all, removeFave, key}){
     const [postFaves, setPostFaves] = useState([])
-    const {id, image, name, symbol, current_price, price_change_percentage_24h} = coin
+    const {id, image, name, symbol, current_price, price_change_percentage_24h, market_cap_rank} = coin
     const favUrl = ('http://localhost:3000/fav_coins')
     
     let i = current_price
@@ -20,6 +21,7 @@ function Coin(coin, removeCoin){
             symbol: symbol,
             current_price: parseInt(current_price),
             price_change_percentage_24h: parseInt(price_change_percentage_24h),
+            market_cap_rank: market_cap_rank
         }
     
         fetch(favUrl, {
@@ -43,14 +45,15 @@ function Coin(coin, removeCoin){
                 <td className="ui small header">{symbol}</td>
                 <td className="ui small header">$ {roundedNumber}</td>
                 <td className="ui small header">{roundedPercent}%</td>
+                <td className="ui small header">{market_cap_rank}</td>
+                
             <td>
-             <Buttons id={id} coin={coin} handleFave={handleFave}/>
+            {all ? <Buttons name={name} coin={coin} handleFave={handleFave}/> : <Remove id={id} removeFave={removeFave} coin={coin}/>}
+             
             </td>
         </tr>
     )
 }
-
-// removeCoin={removeCoin}
 
 export default Coin
 

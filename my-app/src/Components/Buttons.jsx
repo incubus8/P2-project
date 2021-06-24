@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
-function Buttons({coin, handleFave}){
+function Buttons({coin, handleFave, name}){
     const [favorite, setFavorite] = useState(false)
     
     function handleFavorite(){
@@ -14,6 +14,19 @@ function Buttons({coin, handleFave}){
         handleFave()
     }
 
+    function handleRemove(){
+        handleFavorite()
+        removeFave()
+    }
+
+    function removeFave(){
+        fetch(`http://localhost:3000/fav_coins/${name}`, {
+            method: 'DELETE',
+        })
+    }
+
+    
+
      console.log('coins', coin);
 
 
@@ -21,7 +34,7 @@ function Buttons({coin, handleFave}){
         <div>
             {favorite ? (
             <button 
-                onClick={() =>{handleFavorite()}}
+                onClick={handleRemove}
                 className="ui blue basic button">
                 🤑  
             </button>
@@ -32,9 +45,9 @@ function Buttons({coin, handleFave}){
                 😀  
             </button>)
             }
-                <button className="ui blue basic button">
+                {/* <button className="ui blue basic button">
                         😢
-                </button>
+                </button> */}
         </div>
     )
 }

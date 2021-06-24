@@ -5,9 +5,11 @@ import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-rea
 
 function AllCoins({coins, setSort}){
     const coinsList = coins.map(coin => 
-    <Coin key={coin.id} {...coin}
+    <Coin key={coin.id} all={true} coin={coin}
     />
     )
+
+    
  
     console.log(coins);
     return(
@@ -36,7 +38,12 @@ function AllCoins({coins, setSort}){
                             onClick={(e) => setSort(e.target.textContent)}>Change in 24h</h3>
                         </th>
                         <th>
-                            <h3 className="ui blue header"> Favorite  | Remove</h3>
+                            <h3 
+                            className="ui blue header"
+                            onClick={(e) => setSort(e.target.textContent)}>Market Cap Rank</h3>
+                        </th>
+                        <th>
+                            <h3 className="ui blue header"> Favorite</h3>
                         </th>
                     </tr> 
                     {coinsList}
