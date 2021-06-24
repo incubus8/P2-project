@@ -12,7 +12,7 @@ console.log(coins);
             data={{
                 labels: coinName,
                 datasets: [{
-                    label: 'Price',
+                    label: 'Price change in the last 24h',
                     data: coinChange,
                     backgroundColor: 'blue',
                     ticks:{ beginAtZero: true}

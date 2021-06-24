@@ -4,10 +4,11 @@ import FavCoins from './FavCoins'
 import NavBar from './NavBar'
 import Logo from './Logo'
 import Chart from './Chart'
+import Space from './Space'
 
 function CoinContainer(){
     const [coins, setCoins] = useState([])
-    const coinUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=17&page=1&sparkline=false"
+    const coinUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false"
     const [search, setSearch] = useState("")
     const [toggle, setToggle] = useState(true)
     const [sort, setSort] = useState('')
@@ -61,6 +62,7 @@ function CoinContainer(){
             setSort={setSort}
             sort={sort}/>)}
             <Chart coins={coins}/>
+            <Space />
          </main>
          
     )

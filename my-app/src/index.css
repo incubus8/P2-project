@@ -21,11 +21,13 @@ code {
 .table {
  margin-left: 50px;
  margin-right: 50px;
- margin-top: 10px;
+ margin-top: 5px;
+ /* margin-bottom: 50%; */
+
 }
 
 .NavBar {
-  margin-top: 50px;
+  margin-top: 5px;
   margin-left: 50px;
   /* float: left */
 }
@@ -37,10 +39,17 @@ code {
 }
 
 .logo {
-  width: 20px;
-  height: 150px;
-  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.Chart{
+  margin-left: 50px;
+  margin-right: 50px;
+  /* margin-bottom: 50%; */
+}
+
 
 /* .favorite-active{
   width: 60px;

@@ -10,13 +10,11 @@ import CoinContainer from "./CoinContainer";
 function Login(login) {
   const [submit, setSubmit] = useState('')
   
-
   function handleSubmit(e){
     e.preventDefault();
     setSubmit(submit => !submit)
     console.log(submit);
   }
-
 
     return (
       <div className="login">
