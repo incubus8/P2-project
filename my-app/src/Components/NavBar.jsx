@@ -3,12 +3,12 @@ import React, {useState} from 'react'
 import { NavLink, Link, Switch, Route  } from "react-router-dom"
 import CoinContainer from './CoinContainer'
 
-function NavBar({search, setSearch, handleToggle}){
-    // const [toggle, setToggle] = useState(false)
+function NavBar({search, setSearch}){
+    const [toggle, setToggle] = useState(false)
     
-    // function handleToggle(){
-    //     setToggle(toggle => !toggle)
-    // }
+    function handleToggle(){
+        setToggle(toggle => !toggle)
+    }
 
     return (
     <div className = 'NavBar'>
@@ -19,7 +19,7 @@ function NavBar({search, setSearch, handleToggle}){
              <button className ='ui basic blue button'
                 onClick={handleToggle}
                 >             
-                Favorites List
+                {toggle ? "All Coins" : "Favorite Coins"}
             </button>
             <input onChange={(e) => setSearch(e.target.value)} 
                 type="text" 

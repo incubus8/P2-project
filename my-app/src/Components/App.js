@@ -12,12 +12,13 @@ import {NavLink, Link, BrowserRouter, Switch, Route } from "react-router-dom";
 
 function App(){
     const [logIn, setLogIn]= useState(true)
+    
     return(
       <div className='App'>
           {/* {logIn ? <CoinContainer /> : <Login /> } */}
           {/* <Login /> */}
-          {/* <CoinContainer /> */}
-          <Chart />
+          <CoinContainer />
+          {/* <Chart /> */}
       </div>
 )
 }

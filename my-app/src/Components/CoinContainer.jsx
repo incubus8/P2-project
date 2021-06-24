@@ -16,23 +16,23 @@ function CoinContainer(){
     const [sort, setSort] = useState('')
     // const [page, setPage] = useState("/")
     
-    const handleToggle = () =>{
-       setToggle(toggle => !toggle)
-    }
+    // const handleToggle = () =>{
+    //    setToggle(toggle => !toggle)
+    // }
 
-   const renderFaves = () =>{
-        return <FavCoins/>
-    }
+//    const renderFaves = () =>{
+//         return <FavCoins/>
+//     }
 
-    const handleFaves = () =>{
-        handleToggle()
-        renderFaves()
-    }
+//     const handleFaves = () =>{
+//         // handleToggle()
+//         renderFaves()
+//     }
 
-   function addFave (faveCoin) {
-    let faveCoinArr = [...coins, faveCoin]
-    setCoins(faveCoinArr)
-  }
+//    function addFave (faveCoin) {
+//     let faveCoinArr = [...coins, faveCoin]
+//     setCoins(faveCoinArr)
+//   }
 
     useEffect(()=> {
       fetch(coinUrl)
@@ -71,8 +71,8 @@ function CoinContainer(){
                 search={search} 
                 setSearch={setSearch}
                 // handleToggle={handleToggle}
-                toggle={toggle}
-                handleToggle={handleFaves}
+                // toggle={toggle}
+                // handleToggle={handleFaves}
 
             />
             <AllCoins 

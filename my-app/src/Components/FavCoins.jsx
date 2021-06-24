@@ -2,35 +2,66 @@ import React, { useEffect, useState } from 'react'
 
 function FavCoins({faveCoins, coins}) {
     const [faves, setFaves] = useState([])
-    const favUrl = "http://localhost:3000"
-    const {image, name, symbol, current_price, price_change_percentage_24h} = coins
+    const favUrl = "http://localhost:3000/fav_coins"
+    const {image, name, symbol, current_price, price_change_percentage_24h} = faves
+
+    let i = current_price
+    let roundedNumber = (parseFloat(i).toFixed(3))
+    let n = price_change_percentage_24h
+    let roundedPercent = (parseFloat(n).toFixed(2))
 
 
-    const handleFave=()=> {
-        let addFaveItem={
-            image: image,
-            name: name,
-            symbol: symbol,
-            current_price: parseInt(current_price),
-            price_change_percentage_24h: parseInt(price_change_percentage_24h),
-        }
+    useEffect(()=> {
+        fetch(favUrl)
+        .then (res => res.json())
+        .then (favesData => setFaves(favesData))
+      }, [])
 
-    fetch(favUrl, {
-        method: 'POST',
-        headers: { 
-            'Content-Type': 'application/json' 
-            },
-        body: JSON.stringify(addFaveItem),
-        })
-        .then((res) => res.json())
-        .then(faveData => setFaves(faveData))
-    }
+      console.log('faves', faves);
+      console.log(faves.image);
 
-    return(
-        <div onClick={handleFave}>
-
+      return(
+        <div className="table"> 
+            <table className="ui blue table">
+                <tr>
+                    <td >
+                        <img className='ui avatar image'src ={image} alt={name}/> 
+                    </td >
+                    <td 
+                    className="ui small header">{name}</td>
+                        <td className="ui small header">{symbol}</td>
+                        <td className="ui small header">$ {roundedNumber}</td>
+                        <td className="ui small header">{roundedPercent}%</td>
+                </tr>
+            </table>
         </div>
     )
+
+    // const handleFave=()=> {
+        // let addFaveItem={
+        //     image: image,
+        //     name: name,
+        //     symbol: symbol,
+        //     current_price: parseInt(current_price),
+        //     price_change_percentage_24h: parseInt(price_change_percentage_24h),
+        // }
+
+    // fetch(favUrl, {
+    //     method: 'POST',
+    //     headers: { 
+    //         'Content-Type': 'application/json' 
+    //         },
+    //     body: JSON.stringify(addFaveItem),
+    //     })
+    //     .then((res) => res.json())
+    //     .then(faveData => setFaves(faveData))
+    // }
+
+    // return(
+    //     <div onClick={handleFave}>
+
+    //     </div>
+    // )
 }
 
 export default FavCoins
