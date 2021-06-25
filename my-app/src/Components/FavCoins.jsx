@@ -8,7 +8,7 @@ function FavCoins({setSort, sort}) {
     let favCards = faves.map(fave => <Coin key={fave.id} all={false} coin={fave} removeFave={removeFave} />)
 
     function removeFave(id){
-        const favArr = favCards.filter(fave => fave.id !== fave.id);
+        const favArr = faves.filter(fave => fave.id !== id)
         setFaves(favArr)    
       }
 
@@ -45,11 +45,6 @@ function FavCoins({setSort, sort}) {
                             <h3 
                             className="ui blue header"
                             onClick={(e) => setSort(e.target.textContent)}>Change in 24h</h3>
-                        </th>
-                        <th>
-                            <h3 
-                            className="ui blue header"
-                            onClick={(e) => setSort(e.target.textContent)}>Market Cap Rank</h3>
                         </th>
                         <th>
                             <h3 className="ui blue header"> Remove</h3>

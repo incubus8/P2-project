@@ -26,4 +26,3 @@ export default App
 
 // Favorite and then unfavorite
 // Favorite button persists after changing lists
-// remove will refresh list immediately

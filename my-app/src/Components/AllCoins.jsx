@@ -4,8 +4,14 @@ import Coin from './Coin'
 // import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 function AllCoins({coins, setSort}){
+
+
+    // if coins.symbol ===  favcoins.symbol
+    // compare coins to fav_coins
+    // if a coin is in both arrays ad key to coin (fav: true) else fav: false
+
     const coinsList = coins.map(coin => 
-    <Coin key={coin.id} all={true} coin={coin} />
+    <Coin key={coin.id} all={true} coin={coin} fav={coin.fav}/>
     )
 
     // console.log(coins);

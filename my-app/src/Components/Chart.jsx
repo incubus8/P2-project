@@ -12,7 +12,7 @@ function Chart({coins}){
             data={{
                 labels: coinName,
                 datasets: [{
-                    label: 'Price change in the last 24h',
+                    label: '% change in the last 24h',
                     data: coinChange,
                     backgroundColor: 'blue',
                     ticks:{ beginAtZero: true}

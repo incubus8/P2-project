@@ -5,9 +5,10 @@ function Remove({id, removeFave}){
     
     function removeFromFave(){
         fetch(`http://localhost:3000/fav_coins/${id}`, {
-            method: 'DELETE',
+            method: 'DELETE'
         })
-    // removeFave(id)    
+     
+        removeFave(id)    
     }
 
       return(

@@ -4,7 +4,7 @@ import React, {useState} from 'react'
 // import CoinContainer from './CoinContainer'
 
 function NavBar({search, setSearch, setToggle, toggle, setTog, tog}){
-    const [changeState, setChangeState] = useState(true)
+    const [changeState, setChangeState] = useState(false)
     const [changeChart, setchangeChart] = useState(true)
 
     function handleToggle(){
@@ -35,7 +35,7 @@ function NavBar({search, setSearch, setToggle, toggle, setTog, tog}){
             </button>
                     <button className ='ui basic blue button'
                             onClick={handleChartData}>             
-                            {changeChart ? "ShowChart" : "HideChart"}
+                            {changeChart ? "Show Chart" : "Hide Chart"}
                     </button>
             <input onChange={(e) => setSearch(e.target.value)} 
                 type="text" 

@@ -44,7 +44,7 @@ function Coin({coin, all, removeFave}){
                 <td className="ui small header">$ {roundedNumber}</td>
                 <td className="ui small header">{roundedPercent}%</td>
             <td>
-            {all ? <Buttons name={name} coin={coin} handleFave={handleFave}/> : <Remove id={id} removeFave={removeFave} coin={coin}/>}
+            {all ? <Buttons symbol={symbol} coin={coin} handleFave={handleFave}/> : <Remove id={id} removeFave={removeFave} coin={coin}/>}
              
             </td>
         </tr>
