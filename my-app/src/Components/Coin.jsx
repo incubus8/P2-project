@@ -55,8 +55,8 @@ function Coin({coin, all, removeFave, setDetail, detail, coins}){
 
     return(
         <>
-        <tr onClick={handleDetail}> 
-            <td>
+        <tr> 
+            <td onClick={handleDetail}>
                 <img className='ui avatar image'src ={image} alt={name}/>
             </td>
                 <td className="ui small header">{name}</td>
@@ -67,7 +67,7 @@ function Coin({coin, all, removeFave, setDetail, detail, coins}){
             {all ? <Buttons symbol={symbol} coin={coin} handleFave={handleFave}/> : <Remove id={id} removeFave={removeFave} coin={coin}/>}
             </td> 
         </tr>
-         {moreDetail ? <CoinDetail coin={coin}/> : null}
+        {moreDetail ? <CoinDetail coin={coin}/> : null}
         </>
     )
 }
