@@ -25,9 +25,7 @@ function Buttons({coin, handleFave, name}){
         })
     }
 
-    
-
-     console.log('coins', coin);
+    //  console.log('coins', coin);
 
 
         return(
@@ -45,9 +43,6 @@ function Buttons({coin, handleFave, name}){
                 😀  
             </button>)
             }
-                {/* <button className="ui blue basic button">
-                        😢
-                </button> */}
         </div>
     )
 }
