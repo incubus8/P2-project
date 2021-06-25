@@ -3,23 +3,23 @@ import Coin from './Coin'
 // import { Segment } from 'semantic-ui-react'
 // import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
-function AllCoins({coins, setSort}){
-
+function AllCoins({coins, setSort, setDetail, detail}){
 
     // if coins.symbol ===  favcoins.symbol
     // compare coins to fav_coins
     // if a coin is in both arrays ad key to coin (fav: true) else fav: false
 
     const coinsList = coins.map(coin => 
-    <Coin key={coin.id} all={true} coin={coin} fav={coin.fav}/>
-    )
+    <Coin key={coin.id} all={true} coin={coin} fav={coin.fav} 
+    setDetail={setDetail} detail={detail}
+    />)
 
-    // console.log(coins);
+
     return(
         <div className="table"> 
             <table className="ui blue table">
                 <tbody>
-                    <tr>
+                    <tr >
                         <th> 
                             <h3 className="ui blue header">Logo</h3>
                         </th>

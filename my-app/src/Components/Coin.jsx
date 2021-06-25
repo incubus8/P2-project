@@ -1,12 +1,17 @@
 import React, {useState} from 'react'
 import Buttons from './Buttons'
+import CoinContainer from './CoinContainer'
 import Remove from './Remove'
+import CoinDetail from './CoinDetail'
 // import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
-function Coin({coin, all, removeFave}){
+function Coin({coin, all, removeFave, setDetail, detail, coins}){
+    // console.log(coin);
     const [postFaves, setPostFaves] = useState([])
-    const {id, image, name, symbol, current_price, price_change_percentage_24h, market_cap_rank} = coin
+    const {id, image, name, symbol, current_price, price_change_percentage_24h, ath, atl, market_cap_rank, high_24h, low_24h, max_supply} = coin
     const favUrl = ('http://localhost:3000/fav_coins')
+    const [conDetail, setConDetail] = useState(false)
+    const [moreDetail, setMoreDetail]= useState(false)
     
     let i = current_price
     let roundedNumber = (parseFloat(i).toFixed(3))
@@ -33,21 +38,37 @@ function Coin({coin, all, removeFave}){
         .then(faveData => setPostFaves(faveData))
      }
     
+     function handleCoinDetail(){
+        setConDetail(conDetail => !conDetail)
+      console.log(conDetail);
+     }
+
+     function handleDetail(){
+        handleCoinDetail()
+        setMoreDetail(!moreDetail)
+    }
+
+    //  function handleDetail(){
+    //     handleCoinDetail()
+    //     setDetail(!detail)
+    // }
 
     return(
-        <tr>
-            <td >
+        <>
+        <tr onClick={handleDetail}> 
+            <td>
                 <img className='ui avatar image'src ={image} alt={name}/>
-            </td >
+            </td>
                 <td className="ui small header">{name}</td>
                 <td className="ui small header">{symbol}</td>
                 <td className="ui small header">$ {roundedNumber}</td>
                 <td className="ui small header">{roundedPercent}%</td>
             <td>
             {all ? <Buttons symbol={symbol} coin={coin} handleFave={handleFave}/> : <Remove id={id} removeFave={removeFave} coin={coin}/>}
-             
-            </td>
+            </td> 
         </tr>
+         {moreDetail ? <CoinDetail coin={coin}/> : null}
+        </>
     )
 }
 

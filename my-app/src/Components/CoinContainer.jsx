@@ -5,14 +5,18 @@ import NavBar from './NavBar'
 import Logo from './Logo'
 import Chart from './Chart'
 import Space from './Space'
+import CoinDetail from './CoinDetail'
+
 
 function CoinContainer(){
     const [coins, setCoins] = useState([])
     const coinUrl = "https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false"
     const [search, setSearch] = useState("")
     const [toggle, setToggle] = useState(true)
-    const [tog, setTog] = useState(false)
     const [sort, setSort] = useState('')
+    const [tog, setTog] = useState(false)
+    const [detail, setDetail] = useState(true)
+
 
     useEffect(()=> {
       fetch(coinUrl)
@@ -54,18 +58,24 @@ function CoinContainer(){
                 toggle={toggle}
                 tog={tog}
                 setTog={setTog}
-            />
+                />
             {tog ?
                 (<Chart 
-                    coins={coins}/>) : (null)}
+                    coins={coins}/>) : (null)
+                    }
                 {toggle ? 
             (<AllCoins
                 coins={handleSort()} 
-                setSort={setSort}/>
+                setSort={setSort} 
+                setDetail={setDetail} 
+                detail={detail}
+                coins={coins}
+                />
             ):( 
             <FavCoins
                     setSort={setSort}
-                    sort={sort}/>)}
+                    sort={sort}
+                />)}
             <Space 
             />
          </main>
