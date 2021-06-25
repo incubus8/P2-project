@@ -1,4 +1,5 @@
 import React from 'react'
+import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
 function CoinDetail({coin}){
@@ -18,15 +19,13 @@ function CoinDetail({coin}){
             <img className='ui avatar image'src ={image} alt={name}/>
         </td>
       */}
-            <td className="ui small header">Market Rank 
+            <td className="ui inverted segment">Market Rank 
              | {market_cap_rank} </td>
-            <td className="ui small header">All time High ${atl}</td>
-            {/* <td className="ui small header"> High 24h {high_24h}</td>
-            <td className="ui small header"> High 24h {low_24h}</td> */}
-            <td className="ui small header">All time High ${roundedNumber}</td>
-            <td className="ui small header">All time Low  ${roundedPercent}</td>
-            <td className="ui small header">$ {ath}</td>
-    
+            <td className="ui inverted segment">High 24h ${high_24h}</td>
+            {/* <td className="ui inverted segment"> High 24h {high_24h}</td>
+            <td className="ui inverted segment"> High 24h {low_24h}</td> */}
+            <td className="ui inverted segment">All time High ${roundedNumber}</td>
+            <td className="ui inverted segment">All time Low  ${roundedPercent}</td>
     </tr>
     )
 }
