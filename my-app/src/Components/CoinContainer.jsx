@@ -69,7 +69,7 @@ function CoinContainer(){
                 setSort={setSort} 
                 setDetail={setDetail} 
                 detail={detail}
-                coins={coins}
+                // coins={coins}
                 />
             ):( 
             <FavCoins

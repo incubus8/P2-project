@@ -34,7 +34,7 @@ function Buttons({coin, handleFave, symbol}){
             {favorite ? (
             <button 
                 onClick={handleRemove}
-                className="ui blue basic button">
+                className="ui green basic button">
                 🤑  
             </button>
         ):(

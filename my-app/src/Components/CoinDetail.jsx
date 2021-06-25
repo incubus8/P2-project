@@ -14,18 +14,25 @@ function CoinDetail({coin}){
 
 
  return(
-    <tr> 
+    <tr className="ui blue card"> 
        {/* <td>
             <img className='ui avatar image'src ={image} alt={name}/>
         </td>
       */}
-            <td className="ui inverted segment">Market Rank 
-             | {market_cap_rank} </td>
-            <td className="ui inverted segment">High 24h ${high_24h}</td>
-            {/* <td className="ui inverted segment"> High 24h {high_24h}</td>
-            <td className="ui inverted segment"> High 24h {low_24h}</td> */}
-            <td className="ui inverted segment">All time High ${roundedNumber}</td>
-            <td className="ui inverted segment">All time Low  ${roundedPercent}</td>
+            <td className="ui raised card">Market Rank 
+             | {market_cap_rank} 
+             </td>
+            <td className="ui raised card">High 24h
+             ${high_24h}
+            </td>
+            {/* <td className="ui raised card"> High 24h {high_24h}</td>
+            <td className="ui raised card"> High 24h {low_24h}</td> */}
+            <td className="ui raised card">All time High 
+            ${roundedNumber}
+            </td>
+            <td className="ui raised card">All time Low 
+             ${roundedPercent}
+            </td>
     </tr>
     )
 }
