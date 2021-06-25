@@ -19,7 +19,7 @@ function FavCoins({setSort, sort}) {
         .then (favesData => setFaves(favesData))
     }, [])
 
-    console.log('faves', favCards);
+    // console.log('faves', favCards);
     
       return(
         <div className="table"> 

@@ -1,17 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Coin from './Coin'
-import { Segment } from 'semantic-ui-react'
-import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
+// import { Segment } from 'semantic-ui-react'
+// import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 function AllCoins({coins, setSort}){
     const coinsList = coins.map(coin => 
-    <Coin key={coin.id} all={true} coin={coin}
-    />
+    <Coin key={coin.id} all={true} coin={coin} />
     )
 
-    
- 
-    console.log(coins);
+    // console.log(coins);
     return(
         <div className="table"> 
             <table className="ui blue table">
@@ -36,11 +33,6 @@ function AllCoins({coins, setSort}){
                             <h3 
                             className="ui blue header"
                             onClick={(e) => setSort(e.target.textContent)}>Change in 24h</h3>
-                        </th>
-                        <th>
-                            <h3 
-                            className="ui blue header"
-                            onClick={(e) => setSort(e.target.textContent)}>Market Cap Rank</h3>
                         </th>
                         <th>
                             <h3 className="ui blue header"> Favorite</h3>

@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
+// import { Header, Image, Table, Button, Label, Icon, Menu } from 'semantic-ui-react'
 
 
 function Buttons({coin, handleFave, name}){

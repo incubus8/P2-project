@@ -5,7 +5,7 @@ function Chart({coins}){
     const coinName = coins.map(coin => coin.name)
     const coinChange= coins.map(coin => coin.price_change_percentage_24h)
     // const coinMarketCap = coins.map(coin => coin.market_cap_rank)
-console.log(coins);   
+// console.log(coins);   
     return (
         <div className='Chart'>
             <Bar 
